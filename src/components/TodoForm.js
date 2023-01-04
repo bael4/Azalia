@@ -14,8 +14,10 @@ const TodoForm = () => {
   const [text, setText] = useState('');
   const dispatch = useDispatch();
   const addTask = () => {
-    dispatch(addTodo({text}));
-    setText('');
+    if(text){
+     dispatch(addTodo({text}));
+    }
+   setText('');
   };
   return (
     <SafeAreaView style={styles.container}>
